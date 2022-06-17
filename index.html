@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="zxx">
 
 <head>
     <meta charset="utf-8">
@@ -10,15 +10,10 @@
 
     <!-- <link rel="preload" as="font" href="./assets/fonts/CeraProLight.woff2" type="font/woff2" crossorigin="anonymous"> -->
     <!-- <link rel="preload" as="image" href="./assets/img/image.jpg"> -->
-
     <link rel="icon" href="./assets/img/favicon.ico">
-
-    <meta name="theme-color" content="#812b90">
-    <meta name="msapplication-navbutton-color" content="#812b90">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#812b90">
-
-    <link rel="stylesheet" href="./assets/libs/swiper-7.0.8/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./assets/libs/fancybox-4.0.5/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="./assets/libs/swiper-8.2.4/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/libs/fancybox-4.0.27/fancybox.css">
+    <link rel="stylesheet" href="./assets/css/minireset.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
@@ -39,40 +34,41 @@
             footer
         </footer>
 
-        <button data-fancybox="dialog" data-src="#popup_1" class="btn">
+        <button data-fancybox data-src="#popup_1" data-type="inline" class="btn">
             Оставить заявку
         </button>
 
-        <div class="swiper swiper-1x">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-container swiper-name-container">
+            <div class="swiper swiper-name">
+                <div class="swiper-wrapper swiper-name__wrapper">
+                    <div class="swiper-slide swiper-name__slide">1</div>
+                    <div class="swiper-slide swiper-name__slide">2</div>
+                    <div class="swiper-slide swiper-name__slide">3</div>
+                    <div class="swiper-slide swiper-name__slide">4</div>
+                </div>
             </div>
-            <div class="swiper-pagination swiper-pagination-1x"></div>
+            <div class="swiper-pagination swiper-name__pagination"></div>
             <div class="swiper-buttons">
-                <div class="swiper-button-prev swiper-button-prev-1x"></div>
-                <div class="swiper-button-next swiper-button-next-1x"></div>
+                <div class="swiper-button-prev swiper-name__button-prev"></div>
+                <div class="swiper-button-next swiper-name__button-next"></div>
             </div>
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
-                    const swiper_4x = new Swiper('.swiper-4x', {
+                    const swiper_name = new Swiper('.swiper-name', {
                         loop: true,
-                        speed: 900,
-                        autoplay: { delay: 5000, pauseOnMouseEnter: true },
-                        navigation: { prevEl: ".swiper-button-prev-4x", nextEl: ".swiper-button-next-4x" },
-                        // pagination: { el: ".swiper-pagination-4x", clickable: true },
-                        spaceBetween: 30,
+                        navigation: { prevEl: ".swiper-name__button-prev", nextEl: ".swiper-name__button-next" },
+                        pagination: { el: ".swiper-name__pagination", clickable: true },
+                        // autoplay: { delay: 5000, pauseOnMouseEnter: true },
+                        spaceBetween: 20,
                         grabCursor: true,
                         allowTouchMove: true, // touch mouse
                         touchStartPreventDefault: false, // mouseup events
                         breakpoints: { // mobile first
                             0: { slidesPerView: 1 },
                             480: { slidesPerView: 2 },
-                            768: { slidesPerView: 3 },
-                            992: { slidesPerView: 3 },
-                            1200: { slidesPerView: 4 }
+                            768: { slidesPerView: 2 },
+                            992: { slidesPerView: 2 },
+                            1200: { slidesPerView: 2 }
                         },
                     });
                 });
@@ -98,12 +94,10 @@
 
     </div><!-- /wrapper -->
 
-    <script src="./assets/libs/jquery-3.5.1.min.js"></script>
-    <script src="./assets/libs/swiper-7.0.8/swiper-bundle.min.js"></script>
-    <script src="./assets/libs/fancybox-4.0.5/jquery.fancybox.min.js"></script>
+    <script src="./assets/libs/swiper-8.2.4/swiper-bundle.min.js"></script>
+    <script src="./assets/libs/fancybox-4.0.27/fancybox.umd.js"></script>
     <script src="./assets/js/app.js"></script>
     <script src="./assets/js/menu.js"></script>
-
 </body>
 
 </html>

@@ -1,0 +1,142 @@
+/*  ==============================
+ *   Mini reset by only-to-top.ru
+ *  ==============================
+*/
+
+*, *::before, *::after {
+    box-sizing: inherit
+}
+
+html {
+    box-sizing: border-box;
+}
+
+html, body, .wrapper {
+    min-height: 100vh;
+}
+
+html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, button, input, textarea {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+ul {
+    list-style: none
+}
+
+ul, ol {
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+input, textarea, select, button {
+    margin: 0;
+    font-family: inherit;
+}
+
+input, textarea {
+    width: 100%;
+    max-width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 0;
+}
+
+select:focus, select:hover, option:hover, option:focus {
+    box-shadow: none;
+    border: none;
+    outline: none;
+    border: currentColor;
+}
+
+img, video {
+    height: auto;
+    max-width: 100%;
+}
+
+iframe {
+    border: 0;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+td, th {
+    padding: 0
+}
+
+td:not([align]), th:not([align]) {
+    text-align: left
+}
+
+::placeholder {
+    opacity: 1;
+}
+
+::selection {
+    background-color: var(--accent);
+    color: #fff;
+    transition: background-color var(--transition);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+button, input[type=submit] {
+    border: 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+select[disabled], button[disabled] {
+    cursor: not-allowed;
+}
+
+label, a {
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a, input, svg path, svg circle {
+    transition: var(--transition);
+}
+
+button:focus, button:focus-visible, a:focus, * [role="button"]:focus, input:focus, textarea:focus {
+    outline: none !important;
+}
+
+input:focus, input:hover, textarea:focus, textarea:hover {
+    border-color: rgba(59, 50, 95, 0.3);
+}
+
+/* firefox hide arrows */
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* webkit hide arrows */
+
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
