@@ -104,6 +104,7 @@ body {
     text-align: center;
     display: inline-grid;
     place-items: center;
+    text-align: center;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 1px;
@@ -113,9 +114,15 @@ body {
 /* Swiper Slider */
 
 .swiper-container {
-    --swiper-theme-color: pink;
-    --swiper-navigation-color: dark;
+    --swiper-navigation-color: var(--accent);
     --swiper-navigation-size: 34px;
+
+    --swiper-pagination-color: linear-gradient(107.81deg, #A63203 -72.26%, #FBE035 139.72%);
+    --swiper-pagination-bullet-inactive-color: linear-gradient(97.08deg, #F2E1D8 -31.08%, #FEC47D 113.15%);
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-pagination-bullet-width: 10px;
+    --swiper-pagination-bullet-height: 10px;
+    --swiper-pagination-bullet-horizontal-gap: 4.5px;
 }
 
 .swiper {
@@ -130,7 +137,6 @@ body {
 .swiper-slide {
     user-select: none;
 }
-
 
 /* Popups */
 
