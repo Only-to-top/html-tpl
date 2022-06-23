@@ -105,10 +105,12 @@ body {
     display: inline-grid;
     place-items: center;
     text-align: center;
+    white-space: nowrap;
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 1px;
-    min-height: 45px;
+    min-height: 50px;
+    color: var(--text_color);
 }
 
 /* Swiper Slider */
