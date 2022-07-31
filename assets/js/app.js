@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // $("img, a").on("dragstart", e => e.preventDefault());
+    document.querySelectorAll('img, a').forEach(el => el.addEventListener("dragstart", e => e.preventDefault()));
 });
 
 

@@ -71,13 +71,15 @@ img, video {
 
 iframe {
     border: 0;
+    display: block;
 }
 
 table {
+    table-layout: auto;
     width: 100%;
     max-width: 100%;
     border-collapse: collapse;
-    border-spacing: 0
+    border-spacing: 0;
 }
 
 td, th {
