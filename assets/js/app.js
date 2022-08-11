@@ -10,19 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
             NEXT: "Далее",
             PREV: "Назад",
         },
-        template: {
-            closeButton: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" tabindex="-1"><path d="M20 20L4 4m16 0L4 20"/></svg>',
-        },
-        closeButton: 'inside',
-        on: {
-            done: (fancybox) => {
-                const prev_fancybox = fancybox.lastFocus.previousElementSibling;
-
-                if (prev_fancybox.classList.contains('fancybox__container')) {
-                    prev_fancybox.Fancybox.close(); // close prev popup
-                }
-            },
-        },
     });
 
     // Forms

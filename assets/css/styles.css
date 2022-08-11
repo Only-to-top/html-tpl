@@ -124,6 +124,8 @@ body {
 /* Swiper Slider */
 
 .swiper-container {
+    position: relative;
+
     --swiper-navigation-color: var(--accent);
     --swiper-navigation-size: 34px;
 
@@ -140,29 +142,28 @@ body {
     height: 100%;
 }
 
-.swiper-container {
-    position: relative;
-}
-
 .swiper-slide {
     user-select: none;
 }
 
 /* Popups */
 
-.fancybox__content>.carousel__button.is-close {
-    color: #252525;
-    top: 27px;
-    right: 30px;
+.fancybox__container {
+    --fancybox-color: #fff;
 }
 
-.fancybox__content>.carousel__button.is-close, .carousel__button.is-close svg {
-    width: 25px;
-    height: 25px;
+.carousel__button {
+    --carousel-button-width: 24px;
+    --carousel-button-height: 24px;
+    --carousel-button-bg: transparent;
 }
 
-.carousel__button.is-close svg {
-    stroke-width: 1.5;
+.carousel__button svg {
+    --carousel-button-svg-width: 24px;
+    --carousel-button-svg-height: 24px;
+    --carousel-button-svg-stroke-width: 2px;
+    --carousel-button-svg-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.4));
+
 }
 
 /* Hamburger button menu */
