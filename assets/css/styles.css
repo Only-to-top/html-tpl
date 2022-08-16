@@ -163,14 +163,13 @@ body {
     --carousel-button-svg-height: 24px;
     --carousel-button-svg-stroke-width: 2px;
     --carousel-button-svg-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.4));
-
 }
 
 /* Hamburger button menu */
 
 .hamburger {
     --width: 34px;
-    --humb-line-height: 5px;
+    --hamburger-line-height: 5px;
     --border-radius: 0px;
     --height: 25px;
     position: relative;
@@ -196,7 +195,7 @@ body {
 .hamburger span {
     display: block;
     position: absolute;
-    height: var(--humb-line-height);
+    height: var(--hamburger-line-height);
     width: var(--width);
     background: #d3531a;
     border-radius: var(--border-radius);
@@ -213,12 +212,12 @@ body {
 }
 
 .hamburger span:nth-child(2) {
-    top: calc((var(--height) / 2) - var(--humb-line-height) / 2);
+    top: calc((var(--height) / 2) - var(--hamburger-line-height) / 2);
     transform-origin: left center;
 }
 
 .hamburger span:nth-child(3) {
-    top: calc(var(--height) - var(--humb-line-height));
+    top: calc(var(--height) - var(--hamburger-line-height));
     transform-origin: left center;
 }
 

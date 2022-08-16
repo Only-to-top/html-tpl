@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Swiper
-    if (document.querySelector(".swiper-1x")) { };
-
     // Fancybox
     const popup = Fancybox.bind("[data-fancybox]", {
         l10n: {

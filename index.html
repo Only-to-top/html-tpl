@@ -9,7 +9,7 @@
     <!-- <link rel="preload" as="font" href="./assets/fonts/CeraProLight.woff2" type="font/woff2" crossorigin="anonymous"> -->
     <!-- <link rel="preload" as="image" href="./assets/img/image.jpg"> -->
     <link rel="icon" href="./assets/img/favicon.ico">
-    <link rel="stylesheet" href="./assets/libs/swiper-8.2.4/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/libs/swiper-8.3.2/swiper-bundle.min.css">
     <link rel="stylesheet" href="./assets/libs/fancybox-4.0.27/fancybox.css">
     <link rel="stylesheet" href="./assets/css/minireset.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
@@ -32,10 +32,6 @@
             footer
         </footer>
 
-        <button data-fancybox data-src="#popup_1" data-type="inline" class="btn">
-            Оставить заявку
-        </button>
-
         <div class="swiper-container swiper-name-container">
             <div class="swiper swiper-name">
                 <div class="swiper-wrapper swiper-name__wrapper">
@@ -52,26 +48,32 @@
             </div>
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
-                    const swiper_name = new Swiper('.swiper-name', {
-                        loop: true,
-                        navigation: { prevEl: ".swiper-name__button-prev", nextEl: ".swiper-name__button-next" },
-                        pagination: { el: ".swiper-name__pagination", clickable: true },
-                        // autoplay: { delay: 5000, pauseOnMouseEnter: true },
-                        spaceBetween: 20,
-                        grabCursor: true,
-                        allowTouchMove: true, // touch mouse
-                        touchStartPreventDefault: false, // mouseup events
-                        breakpoints: { // mobile first
-                            0: { slidesPerView: 1 },
-                            480: { slidesPerView: 2 },
-                            768: { slidesPerView: 2 },
-                            992: { slidesPerView: 2 },
-                            1200: { slidesPerView: 2 }
-                        },
-                    });
+                    if (document.querySelector(".swiper-name")) {
+                        const swiper_name = new Swiper('.swiper-name', {
+                            loop: true,
+                            navigation: { prevEl: ".swiper-name__button-prev", nextEl: ".swiper-name__button-next" },
+                            pagination: { el: ".swiper-name__pagination", clickable: true },
+                            // autoplay: { delay: 5000, pauseOnMouseEnter: true },
+                            spaceBetween: 20,
+                            grabCursor: true,
+                            allowTouchMove: true, // touch mouse
+                            touchStartPreventDefault: false, // mouseup events
+                            breakpoints: { // mobile first
+                                0: { slidesPerView: 1 },
+                                480: { slidesPerView: 2 },
+                                768: { slidesPerView: 2 },
+                                992: { slidesPerView: 2 },
+                                1200: { slidesPerView: 2 }
+                            },
+                        });
+                    };
                 });
             </script>
         </div><!-- / slider -->
+
+        <button data-fancybox data-src="#popup_1" data-type="inline" class="btn">
+            Оставить заявку
+        </button>
 
         <div id="popup_1" style="display: none;">
             <form class="ajax-form">
@@ -92,7 +94,7 @@
 
     </div><!-- /wrapper -->
 
-    <script src="./assets/libs/swiper-8.2.4/swiper-bundle.min.js"></script>
+    <script src="./assets/libs/swiper-8.3.2/swiper-bundle.min.js"></script>
     <script src="./assets/libs/fancybox-4.0.27/fancybox.umd.js"></script>
     <script src="./assets/js/app.js"></script>
     <script src="./assets/js/menu.js"></script>
