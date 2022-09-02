@@ -121,6 +121,11 @@ body {
     color: var(--text_color);
 }
 
+.btn:active {
+    transform: scale(0.95);
+    transition: 0.05s ease transform;
+}
+
 /* Swiper Slider */
 
 .swiper-container {
