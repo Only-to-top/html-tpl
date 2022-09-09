@@ -1,45 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Fancybox
-    const popup = Fancybox.bind("[data-fancybox]", {
-        l10n: {
-            CLOSE: "Закрыть",
-            NEXT: "Далее",
-            PREV: "Назад",
+    const app = {
+        popups: () => {
+            const popup = Fancybox.bind("[data-fancybox]", {
+                l10n: {
+                    CLOSE: "Закрыть",
+                    NEXT: "Далее",
+                    PREV: "Назад",
+                },
+                closeButton: 'inside', // default
+            });
         },
-    });
-
-    // Forms
-    if (document.querySelector(".ajax-form")) {
-        const ajaxSend = async (url, formData) => {
-            const fetchResponse = await fetch(url, {
-                method: 'POST',
-                body: formData
-            });
-            if (!fetchResponse.ok) {
-                throw new Error(`Ошибка по адресу ${url}, статус ошибки ${fetchResponse.status}`);
-            }
-            return await fetchResponse.text();
-        }
-
-        document.querySelectorAll('.form').forEach(el => {
-            el.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const formData = new FormData(this);
-
-                ajaxSend('/mail.php', formData)
-                    .then(function (data) {
-                        alert('Спасибо! Данные отправлены.');
-                        el.reset();
-                        // setTimeout(() => {
-                        //     document.querySelector('.fancybox-close-small').click(); // close fancy popup
-                        // }, 2000);
-                    }).catch(function (error) {
-                        alert(error);
+        forms: () => {
+            if (document.querySelector(".ajax-form")) {
+                const ajaxSend = async (url, formData) => {
+                    const fetchResponse = await fetch(url, {
+                        method: 'POST',
+                        body: formData
                     });
-            });
-        });
+                    if (!fetchResponse.ok) {
+                        throw new Error(`Ошибка по адресу ${url}, статус ошибки ${fetchResponse.status}`);
+                    }
+                    return await fetchResponse.text();
+                }
+
+                document.querySelectorAll('.form').forEach(el => {
+                    el.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const formData = new FormData(this);
+
+                        ajaxSend('/mail.php', formData)
+                            .then(function (data) {
+                                alert('Спасибо! Данные отправлены.');
+                                el.reset();
+                                // setTimeout(() => {
+                                //     document.querySelector('.fancybox-close-small').click(); // close fancy popup
+                                // }, 2000);
+                            }).catch(function (error) {
+                                alert(error);
+                            });
+                    });
+                });
+            }
+        }
     }
+    app.popups();
+    app.forms();
 
     document.querySelectorAll('img, a').forEach(el => el.addEventListener("dragstart", e => e.preventDefault()));
 });

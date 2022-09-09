@@ -118,11 +118,12 @@ body {
     padding-right: 40px;
     padding-bottom: 1px;
     min-height: 50px;
+    width: fit-content;
     color: var(--text_color);
 }
 
 .btn:active {
-    transform: scale(0.95);
+    transform: scale(0.97);
     transition: 0.05s ease transform;
 }
 
@@ -155,6 +156,7 @@ body {
 
 .fancybox__container {
     --fancybox-color: #fff;
+    --fancybox-content-bg: #fff;
 }
 
 .carousel__button {
@@ -168,6 +170,11 @@ body {
     --carousel-button-svg-height: 24px;
     --carousel-button-svg-stroke-width: 2px;
     --carousel-button-svg-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.4));
+}
+
+.fancybox__content {
+    border-radius: 15px;
+    max-width: 562px;
 }
 
 /* Hamburger button menu */
@@ -243,6 +250,19 @@ body {
     transform: rotate(-45deg);
     top: 22px;
     left: 4px;
+}
+
+/* animation */
+
+/* use animation: fadeEffect 0.8s; */
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 /* header */
