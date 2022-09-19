@@ -37,6 +37,11 @@ $headers = "MIME-Version: 1.0" . PHP_EOL .
     'From: ' . adopt($project_name) . ' <' . $admin_email . '>' . PHP_EOL .
     'Reply-To: ' . $admin_email . '' . PHP_EOL;
 
-mail($admin_email, adopt($form_subject), $html, $headers);
+if (mail($admin_email, adopt($form_subject), $html, $headers)) {
+    echo "Ok";
+} else {
+    $error = error_get_last()["message"];
+    print_r($error);
+}
 
-// file_put_contents(__DIR__.'/file.txt', print_r('$_POST', 1), FILE_APPEND); # look what came
+// file_put_contents(__DIR__.'/file.txt', print_r($_POST, 1), FILE_APPEND); # look what came

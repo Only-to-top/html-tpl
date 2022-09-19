@@ -156,6 +156,7 @@ body {
 
 .fancybox__container {
     --fancybox-color: #fff;
+    --fancybox-content-color: var(--text_color);
     --fancybox-content-bg: #fff;
 }
 
@@ -172,9 +173,9 @@ body {
     --carousel-button-svg-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.4));
 }
 
-.fancybox__content {
+.popup {
     border-radius: 15px;
-    max-width: 562px;
+    max-width: 100%;
 }
 
 /* Hamburger button menu */

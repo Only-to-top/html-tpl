@@ -57,13 +57,6 @@ button {
     padding: 0;
 }
 
-select:focus, select:hover, option:hover, option:focus {
-    box-shadow: none;
-    border: none;
-    outline: none;
-    border: currentColor;
-}
-
 img, video {
     height: auto;
     max-width: 100%;
