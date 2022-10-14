@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         e.preventDefault();
                         const formData = new FormData(this);
 
-                        ajaxSend('/mail.php', formData)
+                        ajaxSend('./lib/mail.php', formData)
                             .then(function (data) {
                                 alert('Спасибо! Данные отправлены.');
                                 el.reset();

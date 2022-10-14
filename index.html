@@ -85,10 +85,13 @@
 
                 <button type="submit" class="btn">Отправить</button>
 
+                <input type="hidden" name="project_name" value="WebDevSuperSite">
                 <!-- <input type="hidden" name="project_name" value="<?php /* bloginfo('name'); */ ?>"> -->
-                <input type="hidden" name="admin_email" value="rlytrue2@gmail.com">
+                <input type="hidden" name="mail_to" value="rlytrue2@gmail.com">
                 <!-- <input type="hidden" name="admin_email" value="<?php /* bloginfo('admin_email'); */ ?>"> -->
-                <!-- <input type="hidden" name="form_subject" value="Форма со страницы <?php /* echo 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; */ ?>"> -->
+                <input type="hidden" name="mail_from" value="rlytrue@gmail.com">
+                <input type="hidden" name="mail_subject" value="Форма со страницы «Главная»">
+                <!-- <input type="hidden" name="mail_subject" value="Форма со страницы <?php /* echo 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; */ ?>"> -->
             </form>
         </div><!-- /popup -->
 
