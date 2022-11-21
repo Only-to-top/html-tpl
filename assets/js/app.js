@@ -1,6 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
+onDOMContentLoaded = () => {
 
     const app = {
+        ajaxSend: async (url, formData) => {
+            const response = await fetch(url, { method: 'POST', body: formData });
+            if (!response.ok) { throw new Error(`Ошибка по адресу ${url}, статус ошибки ${response.status}`); }
+            return await response.text();
+        },
+        ajaxGet: async (url) => {
+            const response = await fetch(url);
+            if (!response.ok) { throw new Error(`Ошибка по адресу ${url}, статус ошибки ${response.status}`); }
+            return await response.json();
+        },
         menu: () => {
             const menu = document.querySelector('.header-menu');
             const hamburger = document.querySelector('.hamburger');
@@ -55,32 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         forms: () => {
             if (document.querySelector(".ajax_form")) {
-                const ajaxSend = async (url, formData) => {
-                    const fetchResponse = await fetch(url, {
-                        method: 'POST',
-                        body: formData
-                    });
-                    if (!fetchResponse.ok) {
-                        throw new Error(`Ошибка по адресу ${url}, статус ошибки ${fetchResponse.status}`);
-                    }
-                    return await fetchResponse.text();
-                }
-
                 document.querySelectorAll('.ajax_form').forEach(el => {
                     el.addEventListener('submit', function (e) {
                         e.preventDefault();
                         const formData = new FormData(this);
 
-                        ajaxSend('./lib/mail.php', formData)
-                            .then(function (data) {
+                        app.ajaxSend('./lib/mail.php', formData)
+                            .then(data => {
                                 alert('Спасибо! Данные отправлены.');
                                 el.reset();
-                                // setTimeout(() => {
-                                //     document.querySelector('.fancybox-close-small').click(); // close fancy popup
-                                // }, 2000);
-                            }).catch(function (error) {
-                                alert(error);
-                            });
+                            })
+                            .catch(error => alert(error));
                     });
                 });
             }
@@ -164,10 +159,10 @@ document.addEventListener('DOMContentLoaded', () => {
     app.phoneMask();
 
     document.querySelectorAll('img, a').forEach(el => el.addEventListener("dragstart", e => e.preventDefault()));
-});
+};
 
 
-window.addEventListener('load', () => { });
+onload = () => { };
 
 // + html { overflow-x: visible; }
 window.addEventListener('scroll', () => { });
