@@ -166,7 +166,7 @@ addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('img, a').forEach(el => el.addEventListener("dragstart", e => e.preventDefault()));
 
-    app.ajaxSend('uri', { type: type, print: true })
+    app.ajaxSend('uri', { type: "type", print: true })
         .then(response => {
             console.log(response);
         })
