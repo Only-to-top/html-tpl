@@ -1,1 +1,1 @@
-# Start HTML template
+# Beauti Start HTML template
