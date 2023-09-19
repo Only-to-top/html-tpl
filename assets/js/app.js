@@ -13,7 +13,7 @@ addEventListener("DOMContentLoaded", () => {
             if (!response.ok) { throw new Error(`Ошибка по адресу ${url}, статус ошибки ${response.status}`); }
             return await response.json();
         },
-
+     
         menu: (() => {
             const menu = document.querySelector('.header-menu');
             const hamburger = document.querySelector('.hamburger');
