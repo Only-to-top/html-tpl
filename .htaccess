@@ -7,7 +7,7 @@ AddType image/svg+xml .svg
 
 ExpiresActive On
 ExpiresDefault "access plus 5 seconds"
- 
+
 # Cache Images
 ExpiresByType image/x-icon "access plus 2592000 seconds"
 ExpiresByType image/jpeg "access plus 2592000 seconds"
