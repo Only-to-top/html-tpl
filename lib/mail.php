@@ -10,7 +10,7 @@ class Mail
     protected $values;    // все поля с форм
 
     public function __get($name)
-    {
+    { 
         return $this->$name;
     }
  
