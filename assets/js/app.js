@@ -25,7 +25,7 @@ addEventListener("DOMContentLoaded", () => {
             hamburger.addEventListener('click', function (e) {
                 e.stopPropagation();
                 toggle();
-            });
+            });  
 
             document.addEventListener('click', function (e) {
                 const its_menu = e.target == menu || menu.contains(e.target);
