@@ -1,3 +1,1 @@
-### Beautiful Start HTML template 2024 !!!!!!!!
-    
-   
+### Beautiful Start HTML template 2024
